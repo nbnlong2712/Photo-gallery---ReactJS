@@ -13,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ImageGrid />} />
           <Route path="/:id" element={<ImageDetail />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>
     </>
