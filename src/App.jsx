@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import ImageGrid from './component/ImageGrid'
 import ImageDetail from './component/ImageDetail'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
@@ -12,8 +12,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<ImageGrid />} />
-          <Route path="/:id" element={<ImageDetail />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/photos/:id/" element={<ImageDetail />} />
         </Routes>
       </Router>
     </>
