@@ -8,6 +8,11 @@ function ImageGrid() {
     const [loading, setLoading] = useState(false);
     const [hasMore, setHasMore] = useState(true);
 
+    const handleImageClick = (id) => {
+        const url = `${window.location.origin}/Photo-gallery---ReactJS/#/${id}`;
+        window.open(url, "_blank");
+    };
+
     useEffect(() => {
         fetchImages();
     }, [page]);
@@ -36,11 +41,11 @@ function ImageGrid() {
         <>
             <div className="image-grid">
                 {images.map((image) => {
-                    return (<div key={image.id} className="image-item">
-                        <Link to={`/${image.id}`}>
-                            <img src={image.urls.small} alt={image.alt_description} />
-                            <p>{image.user.name}</p>
-                        </Link>
+                    return (<div key={image.id} className="image-item" onClick={() => handleImageClick(image.id)}>
+                        {/* <Link to={`/${image.id}`}> */}
+                        <img src={image.urls.small} alt={image.alt_description} />
+                        <p>{image.user.name}</p>
+                        {/* </Link> */}
                     </div>);
                 })}
             </div>

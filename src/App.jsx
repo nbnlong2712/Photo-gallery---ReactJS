@@ -12,7 +12,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<ImageGrid />} />
-          <Route path="/photos/:id/" element={<ImageDetail />} />
+          <Route path="/:id/" element={<ImageDetail />} />
         </Routes>
       </Router>
     </>
